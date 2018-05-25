@@ -26,7 +26,7 @@ public class CustomerTest {
 
     @Test
     public void canAddInstrument(){
-        customer.addItemToInstrument(piano);
+        customer.addItemTobag(piano);
         assertEquals(1, customer.getInstruments().size());
     }
 }

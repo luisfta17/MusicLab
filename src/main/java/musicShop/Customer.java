@@ -28,7 +28,7 @@ public class Customer {
     public void removeMoneyFromWallet(int amount){
         this.wallet -= amount;
     }
-    public void addItemToInstrument(ISell instrument){
+    public void addItemTobag(ISell instrument){
         this.bag.add(instrument);
     }
 }

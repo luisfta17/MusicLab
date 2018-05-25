@@ -27,11 +27,11 @@ public class Shop {
     public void addStock(ISell iSell){
         this.stock.add(iSell);
     }
+    public void removeStock(ISell iSell){
+        this.stock.remove(iSell);
+    }
     public void addExhibition(IPlay instrument){
         this.exhibition.add(instrument);
-    }
-    public int findItemIndexInStock(ISell iSell){
-        return this.stock.indexOf(iSell);
     }
 
     public void addMoney(int amount){
@@ -39,7 +39,20 @@ public class Shop {
     }
 
     public void sellItem(ISell iSell, Customer customer){
-        this.addMoney(iSell.getSellingPrice());
+        if (customer.getWallet() >= iSell.getSellingPrice()){
+            this.addMoney(iSell.getSellingPrice());
+            customer.removeMoneyFromWallet(iSell.getSellingPrice());
+            customer.addItemTobag(iSell);
+            this.removeStock(iSell);
+        }
+    }
+
+    public int potentialProfit(){
+        int total = 0;
+        for (ISell iSell : this.getStock()){
+            total += iSell.calculateMarkup();
+        }
+        return total;
     }
 
 }
