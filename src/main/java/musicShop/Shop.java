@@ -21,6 +21,10 @@ public class Shop {
         return this.exhibition;
     }
 
+    public int getTill(){
+        return  this.till;
+    }
+
     public ArrayList<ISell> getStock() {
         return this.stock;
     }
