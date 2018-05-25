@@ -9,7 +9,7 @@ public abstract class Accessory implements ISell {
         this.buyingPrice = buyingPrice;
         this.sellingPrice = sellingPrice;
     }
-    
+
     public String getType() {
         return this.type;
     }
