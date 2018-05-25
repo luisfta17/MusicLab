@@ -28,6 +28,7 @@ public abstract class Instrument implements IPlay, ISell{
         return this.buyingPrice;
     }
 
+    @Override
     public int getSellingPrice() {
         return this.sellingPrice;
     }

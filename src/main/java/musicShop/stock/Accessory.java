@@ -18,6 +18,7 @@ public abstract class Accessory implements ISell {
         return this.buyingPrice;
     }
 
+    @Override
     public int getSellingPrice() {
         return this.sellingPrice;
     }
